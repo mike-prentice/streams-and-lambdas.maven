@@ -33,7 +33,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */ // TODO
     public List<String> getNames() {
-        return people.stream().map((Person p) -> p.getName()).collect(Collectors.toList());
+        return people.stream().map((p) -> p.getName()).collect(Collectors.toList());
     }
 
 
@@ -51,22 +51,27 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+
+        return getUniquelyNamedPeople().filter((Person p) -> p.getName().charAt(0) == character);
     }
 
 
-      @param n first `n` Person objects
-      @return a Stream of respective
+
+
+    /**
+     * @param n first `n` Person objects
+     * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        return null;
+Map<Long, String> map = new HashMap<>();
+        return people.stream().map((Person p) -> p.put(p.getPersonalId()));
     }
 
 
