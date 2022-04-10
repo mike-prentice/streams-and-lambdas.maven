@@ -81,7 +81,7 @@ Map<Long, String> map = new HashMap<>();
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
 
-        return people.stream().;
+        return null;
     }
 
 
@@ -89,8 +89,7 @@ Map<Long, String> map = new HashMap<>();
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        return null;
-    }
+        return null;}
 
     // DO NOT MODIFY
     public Boolean contains(Person p) {
